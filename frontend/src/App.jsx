@@ -5,13 +5,13 @@ function App() {
   const [texto, setTexto] = useState("");
 
   useEffect(() => {
-    fetch("https://<TU-BACKEND>.onrender.com/api/notas")
+    fetch("https://test_hmi.onrender.com/api/notas")
       .then(res => res.json())
       .then(data => setNotas(data));
   }, []);
 
   const agregarNota = async () => {
-    const res = await fetch("https://<TU-BACKEND>.onrender.com/api/notas", {
+    const res = await fetch("https://test_hmi.onrender.com/api/notas", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ texto })
